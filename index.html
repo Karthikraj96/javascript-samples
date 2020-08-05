@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	
+	<style>
+		h3{
+			display: inline;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container-fluid">
+  		<div class="row">
+    		<div class="col-12 col-sm-12  col-lg-5 border">
+    			<h2> Swapping Without Third Variable</h2>
+     			<script type="text/javascript">
+			function swap(n1,n2) {
+			document.write("<br> <h3>Intial Values Before Swapping:<br><br>Number 1 is-->&nbsp;</h3>"+n1+"&nbsp;&nbsp;<h3>Number 2 is-->&nbsp;</h3>"+n2 );
+					n1=n1+n2;
+					n2=n1-n2;
+					n1=n1-n2;
+					document.write("<br> <h3> Values After Swapping:<br><br>Number 1 is-->&nbsp;</h3>"+n1+"&nbsp;&nbsp;<h3>Number 2 is-->&nbsp;</h3>"+n2+"<br>" );
+				}
+				swap(10,90);swap(20,80);swap(30,70);swap(40,60);swap(50,10);
+		</script>
+   			</div>
+   			 <div class="col-12 col-sm-12 col-lg-2 border">
+   			 	<h2>Odd or Even Function</h2><br><br>
+      			<script type="text/javascript">
+			function oddeven(n1) {
+			if(n1%2==0)
+			{
+				return "even";
+			}
+			else
+			{
+				return "odd";
+			} 
+			}
+		document.write("<h3>The First Variable 67 is</h3> &nbsp;&nbsp;"+oddeven(67)+"<br>");
+		document.write("<h3>The Second Variable 76 is</h3> &nbsp;&nbsp;"+oddeven(76)+"<br>");
+		</script>
+    		</div>
+    		<div class="col-12 col-sm-12 col-lg-2 border">
+    			<h2> The Greatest Among Three Numbers</h2><br><br>
+      		<script type="text/javascript">
+      		var x=20,y=10,z=15;
+
+      		
+
+      		if (x>y  && x>z)
+      		{
+      		document.write("<h3>X = 20 is Greater</h3>");
+      		}
+
+      		
+      		else if (y>x  && y>z)
+      		{
+      		document.write("<h3>Y = 10 is Greater</h3>");
+      		}
+
+      		
+      		else
+      		{
+      		document.write("<h3>Z = 15 is Greater</h3>");
+      		}
+      		</script>
+      			
+    		</div>
+    		<div class="col-12 col-sm-12 col-lg-3 border">
+    			<h2>Arithmetic Operations</h2>
+			<script type="text/javascript">
+				var a=18;
+				var b=6;
+				document.write("<h3>A Value is 18 </br> B Value is 6</h3>");
+				document.write("</br><h3><h3>(a+b)is --></h3>" + (a+b));
+				document.write("</br><h3>(a-b)is --></h3>" + (a-b));
+				document.write("</br><h3>(a*b)is --></h3>" + (a*b));
+				document.write("</br><h3>(b/a)is --></h3>" + (b/a));
+				document.write("</br><h3>(b**a)is --></h3>" + (b**a));
+				document.write("</br><h3>(++a)is --></h3>" + (++a));
+				document.write("</br><h3>(a++)is --></h3>" + (a++));
+				document.write("</br><h3>A Current Value is --></h3>" + a);
+				document.write("</br><h3>(--a)is --></h3>" + (--a));
+				document.write("</br><h3>(a--)is --></h3>" + (a--));
+				document.write("</br><h3> A Current Value is --></h3>" + a);
+			</script>
+    		</div>
+  		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+	</script>
+</body>
+</html>

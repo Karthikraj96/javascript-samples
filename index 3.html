@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	
+	<style>
+		h3{
+			display: inline;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container-fluid">
+  		<div class="row">
+    		<div class="col-12 col-sm-12  col-lg-3 border">
+    			<h2> Factorial</h2>
+    			<button onclick="fact()"> Factorial</button>
+     			<script type="text/javascript">
+			function fact()
+			{
+			    input = Number(prompt('Enter a Number to print Factorial : '))
+			    document.write("'Factorial' of the Number using 'while'");
+			    document.write("<br> Input Number is : ", input);
+
+			    if (input < 0){
+			        document.write('<br>Factorial does not exist for negative number');
+			    } else if (input == 1){
+			        document.write('<br>The factorial of 0 is 1');
+			    } else{
+			        var factorial = 1, loop = 1;
+			        while (loop <= input){
+			            document.write("<br>", factorial, ' * ', loop);        
+			            factorial *=  loop;
+			            loop ++ ;
+			        }
+			    }   
+			    document.write("<br>The Factorial of ", input, ' is ', factorial);
+		 	}
+				
+		</script>
+   			</div>
+   			 <div class="col-12 col-sm-12 col-lg-3 border">
+   			 	<h2>Check Leap Year</h2>
+   			 	<button onclick="leap()"> Leap Year</button>
+      			<script type="text/javascript">
+			function leap()
+			{
+			    input = Number(prompt('Enter a year to check Leap year : '));
+			    document.write("<br> Check whether the entered year is leap year or not using 'if else'.");
+			    document.writeln('<br><br>Input Year is : ', input);
+			    var leap = false;
+			    if (input % 4 == 0){
+			        if (input % 100 == 0){
+			            if (input % 400 == 0){
+			                leap=true;
+			            }else{
+			                leap=false;
+			            }
+			        } else{
+			            leap = false;
+			        }
+			    }  else{
+			        leap = false;
+			    }
+			    document.write('<br>',input, ' is ', leap ? '' : 'not ', 'a leap year');
+			}
+
+		</script>
+    		</div>
+    		<div class="col-12 col-sm-12 col-lg-3 border">
+    			<h2> Fibonacci Series</h2>
+    			<button onclick="fibi()"> Fibi Series</button>
+      		<script type="text/javascript">
+      		function fibi()
+      		{
+      		    nterms = Number(prompt('Fibonacci sequence How many terms ?'));
+      		    document.write("<br>Print 'Fibonacci series' up-to the entered No  using 'For Loop'");
+      		    document.write("<br><br>Input Terms : ",nterms);
+      		    var n1 = 0, n2 = 1 , nth = 0;
+      		    if (nterms <= 0){
+      		        document.write("<br>Enter a positive integer!");
+      		    }else if (nterms == 1){
+      		        document.write("<br>Fibonacci Series : ",n1);
+      		    }else{
+      		        
+      		        var fibonacci = [];
+      		        for(count = 0 ; count < nterms ; count++){
+      		            fibonacci[count] = n1;
+      		            
+      		            nth = n1 + n2;
+      		            n1 = n2;
+      		            n2 = nth;
+      		           
+      		        }
+      		    }    
+      		    document.write("<br>Fibonacci series");
+      		    document.write("<br>",fibonacci);
+ 		   	}
+			</script>
+    		</div>
+    		<div class="col-12 col-sm-12  col-lg-3 border">
+    			<h2> Calculator</h2>
+    			<button onclick="cal()"> Calculator</button>
+     			<script type="text/javascript">
+			function cal(){
+			    input = prompt('Enter Nos separted by comma for Arithmatic operation');
+			    input = input.split(',');
+			    document.write("<br>Create a simple calculator using 'switch'")
+			    document.write('<br><br>Input : ',input)
+			    var addbtn = document.createElement('BUTTON')
+			    var text = document.createTextNode(" + "); 
+			    addbtn.appendChild(text); 
+			    document.write('<br>');
+			    document.body.appendChild(addbtn);
+			    addbtn.onclick= function(){
+			        Calc(1);
+			    }
+
+			    var subbtn = document.createElement('BUTTON')
+			    var text = document.createTextNode(" - "); 
+			    subbtn.appendChild(text); 
+			    document.body.appendChild(subbtn);
+			    subbtn.onclick= function(){
+			        Calc(2);
+			    }
+
+			    var sumbtn = document.createElement('BUTTON')
+			    var text = document.createTextNode(" * "); 
+			    sumbtn.appendChild(text); 
+			    document.body.appendChild(sumbtn);
+			    sumbtn.onclick= function(){
+			        Calc(3);
+			    }
+
+			    var divbtn = document.createElement('BUTTON')
+			    var text = document.createTextNode(" / "); 
+			    divbtn.appendChild(text); 
+			    document.body.appendChild(divbtn);
+			    divbtn.onclick= function(){
+			        Calc(4);
+			    }
+
+			   
+			}
+
+			function Calc(option){
+			    var input1 = [];
+			    input1=input.slice(0,input.length);
+			    var number = Number(input1[0]);
+			    input1.shift();
+			    // document.write('<br>', input, input1, ',', input1.length);
+			    for(var count = 0; count < input1.length; count++){
+			        // document.write('<br>', count, ',', input1[count]);
+			        switch(option){
+			            case 1:
+			                number += Number(input1[count]);
+			                break;
+			            case 2:
+			                number -= Number(input1[count]);
+			                break;
+			            case 3:
+			                number *= Number(input1[count]);
+			                break;
+			            case 4:
+			                number /= Number(input1[count]);
+			                break;
+			    
+			        }    
+			    }
+			    document.write('<br>', number);
+			}
+				
+		</script>
+   			</div>
+  		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+	</script>
+</body>
+</html>
